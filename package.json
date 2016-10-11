@@ -1,0 +1,15 @@
+{
+  "name": "podigg-lc",
+  "version": "1.0.0",
+  "description": "Linked Connections generator based on PoDiGG",
+  "main": "bin/generate",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruben Taelman",
+  "license": "MIT",
+  "dependencies": {
+    "gtfs2lc": "git+https://github.com/rubensworks/gtfs2lc.git",
+    "podigg": "git+https://github.com/rubensworks/podigg.git"
+  }
+}
