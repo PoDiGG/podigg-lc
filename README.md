@@ -3,6 +3,11 @@ _POpulation DIstribution-based Gtfs Generator_
 
 A Linked Connections generator.
 
+Make sure to clone this repo recursively to ensure that the submodule is downloaded:
+```bash
+git clone --recursive ifigit@git.informatik.uni-leipzig.de:taelman/podigg-lc.git
+```
+
 Building the container:
 ```bash
 docker build -t podigg-lc .
@@ -10,9 +15,10 @@ docker build -t podigg-lc .
 
 Running the container:
 ```bash
-docker run -it --rm podigg-lc \
--v $(pwd)/output_data:/tmp/output_data
--e GTFS_GEN_SEED=123
+docker run -it --rm \
+-v $(pwd)/output_data:/tmp/output_data \
+-e GTFS_GEN_SEED=123 \
+podigg-lc
 ```
 This will generate a `lc.ttl` file in the `output_data` folder, which contains Linked Connections.
 Additionally, the folder will also contain the raw GTFS files and a visualization of the data.

@@ -1,5 +1,7 @@
 FROM node:6.7.0
-ADD bin .
+ADD podigg podigg
+ADD bin bin
 ADD package.json package.json
-RUN npm install
-CMD node --harmony_destructuring bin/generate /tmp/output_data
+RUN cd podigg && npm install && npm link
+RUN npm link podigg && npm install
+CMD node bin/generate /tmp/output_data

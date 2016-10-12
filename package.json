@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "gtfs2lc": "git+https://github.com/rubensworks/gtfs2lc.git",
-    "podigg": "git+https://github.com/rubensworks/podigg.git"
+    "podigg": "1.0.0"
   }
 }
