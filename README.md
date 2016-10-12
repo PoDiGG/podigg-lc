@@ -24,5 +24,5 @@ This will generate a `lc.ttl` file in the `output_data` folder, which contains L
 Additionally, the folder will also contain the raw GTFS files and a visualization of the data.
 
 All generator parameters can be configured using environment variables.
-More information about this can be found at https://git.datasciencelab.ugent.be/rtaelman/podigg
+More information about this can be found at https://git.datasciencelab.ugent.be/rtaelman/podigg or https://git.informatik.uni-leipzig.de/taelman/podigg
 
