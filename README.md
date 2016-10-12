@@ -1,7 +1,7 @@
 # PoDiGG Linked Connections
 _POpulation DIstribution-based Gtfs Generator_
 
-A Linked Connections generator.
+This is an extension of the PoDiGG generator that automatically generates Linked Connections from the GTFS data that is generated.
 
 Make sure to clone this repo recursively to ensure that the submodule is downloaded:
 ```bash
