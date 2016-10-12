@@ -5,8 +5,9 @@ const childProcess = require('child_process');
 const fs = require('fs');
 
 // Generate GTFS
+var path = process.argv.length < 3 ? '.' : process.argv[2];
 var generator = Podigg.fromEnvironmentVariables();
-generator.generate('.');
+generator.generate(path);
 
 function prefixZero(element) {
     return element < 10 ? "0" + element : element;
@@ -20,7 +21,7 @@ function timestampToDate(timestamp) {
 // Convert GTFS to LC
 var startDate = timestampToDate(generator.options['time_initial'] || 0);
 var endDate = timestampToDate(generator.options['time_final'] || (24 * 3600000 * 31));
-var p = childProcess.spawn('./node_modules/gtfs2lc/bin/gtfs2lc.js', ['./gtfs', '-f', 'turtle', '-r', '-s', startDate, ' -e', endDate]);
-p.stdout.pipe(fs.createWriteStream('./lc.ttl'));
+var p = childProcess.spawn('./node_modules/gtfs2lc/bin/gtfs2lc.js', [path + '/gtfs', '-f', 'turtle', '-r', '-s', startDate, ' -e', endDate]);
+p.stdout.pipe(fs.createWriteStream(path + '/lc.ttl'));
 p.stderr.pipe(process.stderr);
 
