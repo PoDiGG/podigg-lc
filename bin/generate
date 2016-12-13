@@ -15,13 +15,13 @@ function prefixZero(element) {
 
 function timestampToDate(timestamp) {
     var date = new Date(timestamp);
-    return date.getFullYear() + "" + prefixZero(date.getMonth() + 1) + "" + prefixZero(date.getDate() + 1);
+    return date.getFullYear() + "" + prefixZero(date.getMonth() + 1) + "" + prefixZero(date.getDate());
 }
 
 // Convert GTFS to LC
 var startDate = timestampToDate(generator.options['connections:time_initial'] || 0);
 var endDate = timestampToDate(generator.options['connections:time_final'] || (24 * 3600000 * 31));
-var p = childProcess.spawn('./node_modules/gtfs2lc/bin/gtfs2lc.js', [path + '/gtfs', '-f', 'turtle', '-r', '-t', '-a', '-s', startDate, ' -e', endDate]);
+var p = childProcess.spawn('./node_modules/gtfs2lc/bin/gtfs2lc.js', [path + '/gtfs', '-f', 'turtle', '-r', '-t', '-a', '-s', startDate, '-e', endDate]);
 p.stdout.pipe(fs.createWriteStream(path + '/lc.ttl'));
 p.stderr.pipe(process.stderr);
 
