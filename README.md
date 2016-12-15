@@ -1,6 +1,9 @@
 # PoDiGG Linked Connections
 _POpulation DIstribution-based Gtfs Generator_
 
+[![npm version](https://badge.fury.io/js/podigg-lc.svg)](https://www.npmjs.com/package/podigg-lc)
+[![Docker Automated Build](https://img.shields.io/docker/automated/podigg/podigg-lc.svg)](https://hub.docker.com/r/podigg/podigg-lc/)
+
 This is an extension of the [PoDiGG](https://github.com/PoDiGG/podigg) generator that automatically generates Linked Connections RDF in Turtle from the GTFS data that is generated.
 
 # Install
