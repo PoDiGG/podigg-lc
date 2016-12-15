@@ -40,8 +40,19 @@ podigg-lc-env [output folder]
 
 This generator can be run using a Docker container as follows:
 
-Running the container:
+Downloading and running the container from the Docker hub:
 ```bash
+docker pull podigg/podigg-lc
+docker run -it --rm \
+-v $(pwd)/output_data:/tmp/output_data \
+-e GTFS_GEN_SEED=123 \
+podigg/podigg-lc
+```
+
+Building and running the container from this repo:
+```bash
+git clone git@github.com:PoDiGG/podigg-lc.git
+cd podigg-lc
 docker build -t podigg-lc .
 docker run -it --rm \
 -v $(pwd)/output_data:/tmp/output_data \
