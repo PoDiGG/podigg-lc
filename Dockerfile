@@ -7,4 +7,4 @@ ADD bin bin
 ADD package.json package.json
 RUN cd podigg && npm install && npm link
 RUN npm link podigg && npm install
-CMD node --max_old_space_size=${NODE_MEM} bin/generate /tmp/output_data
+CMD bin/generate.sh /tmp/output_data
