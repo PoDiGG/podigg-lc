@@ -1,31 +1,50 @@
 # PoDiGG Linked Connections
 _POpulation DIstribution-based Gtfs Generator_
 
-This is an extension of the PoDiGG generator that automatically generates Linked Connections from the GTFS data that is generated.
+This is an extension of the [PoDiGG](https://github.com/PoDiGG/podigg) generator that automatically generates Linked Connections RDF in Turtle from the GTFS data that is generated.
 
-Make sure to clone this repo recursively to ensure that the submodule is downloaded:
+# Install
+
 ```bash
-git clone --recursive ifigit@git.informatik.uni-leipzig.de:taelman/podigg-lc.git
+npm install podigg-lc
+```
+# Usage
+
+This tool will generate a `lc.ttl` file in the `output_data` folder, which contains Linked Connections.
+Additionally, the folder will also contain the raw GTFS files and a visualization of the data.
+
+All generator parameters can be configured using a config file or environment variables, depending on how the generator is invoked.
+More information about this can be found at https://github.com/PoDiGG/podigg#parameters
+
+For big data generation, the `NODE_MEM` environment variable can be overridden to increase the maximum memory usage.
+This can be done by adding the `-e NODE_MEM=<memory in MB>` option when running the Docker container.
+
+## Command line
+
+The easiest way to run the generator is using the command line tool:
+```bash
+podigg-lc [output folder [path to a JSON config file]]
+```
+This config file contains parameters for the generator, as explained in [the main generator](https://github.com/PoDiGG/podigg#command-line).
+
+Alternatively, the generator can also be configured using environment variables, as explained below.
+In that case, the generator must be called as follows:
+```bash
+podigg-lc-env [output folder]
 ```
 
-Building the container:
-```bash
-docker build -t podigg-lc .
-```
+## Docker
+
+This generator can be run using a Docker container as follows:
 
 Running the container:
 ```bash
+docker build -t podigg-lc .
 docker run -it --rm \
 -v $(pwd)/output_data:/tmp/output_data \
 -e GTFS_GEN_SEED=123 \
 podigg-lc
 ```
-This will generate a `lc.ttl` file in the `output_data` folder, which contains Linked Connections.
-Additionally, the folder will also contain the raw GTFS files and a visualization of the data.
 
-All generator parameters can be configured using environment variables.
-More information about this can be found at https://git.datasciencelab.ugent.be/rtaelman/podigg or https://git.informatik.uni-leipzig.de/taelman/podigg
-
-For big data generation, the `NODE_MEM` environment variable can be overridden to increase the maximum memory usage.
-This can be done by adding the `-e NODE_MEM=<memory in MB>` option when running the Docker container.
+Parameters must be passed using environment variables.
 
