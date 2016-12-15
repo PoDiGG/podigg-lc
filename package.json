@@ -1,15 +1,19 @@
 {
   "name": "podigg-lc",
   "version": "1.0.0",
-  "description": "Linked Connections generator based on PoDiGG",
+  "description": "Linked Connections RDF generator based on PoDiGG",
   "main": "bin/generate",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "podigg-lc": "./bin/generate-config",
+    "podigg-lc-env": "./bin/generate-env"
   },
   "author": "Ruben Taelman",
   "license": "MIT",
   "dependencies": {
     "gtfs2lc": "git+https://github.com/rubensworks/gtfs2lc.git",
-    "podigg": "1.0.0"
+    "podigg": "1.0.2"
   }
 }
