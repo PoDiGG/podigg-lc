@@ -6,7 +6,7 @@ const fs = require('fs');
 module.exports = function(type) {
     process.argv.shift();
     process.argv.shift();
-    var path = process.argv.length < 1 ? '.' : process.argv[0];
+    var path = process.argv.length < 1 ? 'output_data' : process.argv[0];
 
     var process_generate = childProcess.spawn('./node_modules/podigg/bin/generate-' + type + '.js', process.argv);
     process_generate.stdout.pipe(process.stdout);
