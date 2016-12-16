@@ -10,6 +10,21 @@
     "podigg-lc": "./bin/generate-config",
     "podigg-lc-env": "./bin/generate-env"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PoDiGG/podigg-lc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PoDiGG/podigg-lc/issues"
+  },
+  "keywords": [
+    "RDF",
+    "generator",
+    "dataset",
+    "GTFS",
+    "Linked Connections",
+    "turtle"
+  ],
   "author": "Ruben Taelman",
   "license": "MIT",
   "dependencies": {
