@@ -29,6 +29,6 @@
   "license": "MIT",
   "dependencies": {
     "gtfs2lc": "git+https://github.com/PoDiGG/gtfs2lc.git#9c02966",
-    "podigg": "1.0.3"
+    "podigg": "1.0.4"
   }
 }
