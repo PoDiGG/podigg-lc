@@ -1,6 +1,6 @@
 {
   "name": "podigg-lc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Linked Connections RDF generator based on PoDiGG",
   "main": "bin/generate",
   "scripts": {
