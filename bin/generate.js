@@ -8,12 +8,12 @@ module.exports = function(type) {
     process.argv.shift();
     var path = process.argv.length < 1 ? 'output_data' : process.argv[0];
 
-    var process_generate = childProcess.spawn('./node_modules/podigg/bin/generate-' + type + '.js', process.argv);
+    var process_generate = childProcess.spawn(__dirname + '/../node_modules/podigg/bin/generate-' + type + '.js', process.argv);
     process_generate.stdout.pipe(process.stdout);
     process_generate.stderr.pipe(process.stderr);
     process_generate.on('close', (code_generate) => {
         if(!code_generate) {
-            var process_convert = childProcess.spawn('./node_modules/gtfs2lc/bin/gtfs2lc.js', [path + '/gtfs', '-f', 'turtle', '-r', '-t', '-a']);
+            var process_convert = childProcess.spawn(__dirname + '/../node_modules/gtfs2lc/bin/gtfs2lc.js', [path + '/gtfs', '-f', 'turtle', '-r', '-t', '-a']);
             process_convert.stdout.pipe(fs.createWriteStream(path + '/lc.ttl'));
             process_convert.stderr.pipe(process.stderr);
             process_convert.on('close', (code_convert) => {
