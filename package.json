@@ -1,6 +1,6 @@
 {
   "name": "podigg-lc",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Linked Connections RDF generator based on PoDiGG",
   "main": "bin/generate",
   "scripts": {
@@ -29,6 +29,6 @@
   "license": "MIT",
   "dependencies": {
     "gtfs2lc": "git+https://github.com/PoDiGG/gtfs2lc.git#ef251ff",
-    "podigg": "1.0.4"
+    "podigg": "1.0.5"
   }
 }
