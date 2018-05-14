@@ -28,7 +28,7 @@
   "author": "Ruben Taelman",
   "license": "MIT",
   "dependencies": {
-    "gtfs2lc": "git+https://github.com/PoDiGG/gtfs2lc.git#5e1b965",
+    "gtfs2lc": "git+https://github.com/PoDiGG/gtfs2lc.git#2c610db",
     "podigg": "1.0.7"
   }
 }
